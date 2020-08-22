@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+ <style>
+ 	ul{text-align: center;}
+ 	li{display: inline-block; width: 100px;}
+ </style>
+</head>
+<body>
+	<h1>회원가입</h1>
+	<hr/>
+	<ul>
+		<li><a href="main.jsp" title="메인">메인</a></li>
+		<li><a href="login.jsp" title="로그인">로그인</a></li>
+		<li><a href="join.jsp" title="회원가입">회원가입</a></li>
+	</ul>
+	<hr/>
+	<!-- form태그 :: 데이터를 전송하기 위한 박스 이다 -->
+	<form action="joinProc.jsp" method="get">
+		<input type="text" name="userName" placeholder="userName"/><br/>
+		<input type="password" name="password"placeholder="userPw"/><br/>
+		<input type="email" name="email" placeholder="userEmail"/>
+		<button>전송</button>
+	</form>
+</body>
+</html>

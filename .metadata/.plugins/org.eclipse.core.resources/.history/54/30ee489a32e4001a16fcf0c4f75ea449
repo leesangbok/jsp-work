@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<% 
+	String username = request.getParameter("userName");
+	String userpw = request.getParameter("password");
+	String useremail = request.getParameter("email");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입을 수행하는 페이지</title>
+</head>
+<body>
+	유저네임 : <%=username %>
+	유저비번 : <%=userpw %>
+	유저이메일 : <%=useremail %>
+</body>
+</html>
