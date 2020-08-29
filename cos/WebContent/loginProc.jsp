@@ -6,6 +6,7 @@
 	
 	if(username.equals("sang")&&password.equals("1234")){
 		session.setAttribute("auth", true);
+		session.getAttribute(username);
 	}
 	
 	response.sendRedirect("main.jsp");
