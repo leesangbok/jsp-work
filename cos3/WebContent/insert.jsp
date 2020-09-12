@@ -26,7 +26,7 @@
 	PreparedStatement pstmt = conn.prepareStatement(query); //변수명 적어서 담아보낸다.
 	pstmt.setString(1, password);
 	pstmt.setString(2, name);//타입에 맞춰서 적어주면 된다.
-	int result = pstmt.executeUpdate(); //executeQuery 는 select 할때 쓴다. 수정된 행의 개수가 리턴
+	int result = pstmt.executeUpdate(); //executeQuery 는 select 할때 쓴다. 수정된 행의 개수가 리턴  한번연결하고 응답할때 끊어버리는게 Statelss(Http에 쓴다), dbcp는 계속 지속 연결
 %>
 수정된 행의 개수 : <%=result%>
 </body>

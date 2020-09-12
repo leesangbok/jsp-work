@@ -11,7 +11,6 @@ public class DBconn {
 		
 		
 		try {
-			
 			Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
 			DataSource ds = (DataSource)envContext.lookup("jdbc/TestDB");
@@ -19,7 +18,7 @@ public class DBconn {
 			System.out.println("DB연결 성공");
 			return conn;
 			
-		} catch (Exception e) {
+		}catch (Exception e) {
 			System.out.println("DB연결시 오류가 났습니다 : " + e.getMessage());
 		}
 		return null;
