@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +22,26 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/user/loginForm.do">로그인</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/user/joinForm.do">회원가입</a>
-      </li>   
+      <c:choose>
+      	<c:when test="${empty sessionScope.principal}"><!-- empty는 값이 있는지 없는지 확인해준다 자세하게 null인지 공백인지까지도 확인한다. -->
+      		<li class="nav-item">
+			       <a class="nav-link" href="/user?cmd=loginForm">로그인</a>
+			    </li>
+			    <li class="nav-item">
+			       <a class="nav-link" href="/user?cmd=joinForm">회원가입</a>
+			    </li>
+      	</c:when>
+      		<c:otherwise>
+      			<li class="nav-item"><a class="nav-link" href="/user?cmd=saveForm">글쓰기</a></li>
+			    <li class="nav-item"><a class="nav-link" href="/user?cmd=updateForm">회원수정</a></li>
+			    <li class="nav-item"><a class="nav-link" href="/user?cmd=logout">로그아웃</a></li>
+      		</c:otherwise>
+      	
+      </c:choose>
+      
+        
+      
+       
     </ul>
   </div>  
 </nav>
