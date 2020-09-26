@@ -13,6 +13,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -32,9 +35,11 @@
 			    </li>
       	</c:when>
       		<c:otherwise>
-      			<li class="nav-item"><a class="nav-link" href="/user?cmd=saveForm">글쓰기</a></li>
+      			<li class="nav-item"><a class="nav-link" href="/post?cmd=saveForm">글쓰기</a></li>
 			    <li class="nav-item"><a class="nav-link" href="/user?cmd=updateForm">회원수정</a></li>
 			    <li class="nav-item"><a class="nav-link" href="/user?cmd=logout">로그아웃</a></li>
+			    <li style="color:#fff;" class="float-right">${sessionScope.principal.username} 님 환영합니다!</li>
+			    
       		</c:otherwise>
       	
       </c:choose>
