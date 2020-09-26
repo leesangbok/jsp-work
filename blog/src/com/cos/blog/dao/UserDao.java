@@ -51,4 +51,22 @@ public class UserDao {
 		}
 		return null;
 	}
+	
+	public int 회원수정(User user) {
+		String query = "UPDATE user SET username=?, password = ?, email=?, address=?, createDate=now() WHERE id = ?"; //쿼리문을 작성해서 변수에 담는다
+		Connection conn = DBconn.getInstance();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, user.getUsername());
+			pstmt.setString(2, user.getPassword());
+			pstmt.setString(3, user.getEmail());
+			pstmt.setString(4, user.getAddress());
+			pstmt.setInt(5, user.getId());
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("회원수정 오류" + e);
+		}
+		return -1;
+	}
 }
