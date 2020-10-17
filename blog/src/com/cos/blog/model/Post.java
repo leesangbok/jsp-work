@@ -2,17 +2,14 @@ package com.cos.blog.model;
 
 import java.sql.Timestamp;
 
-//게시글
 public class Post {
 	private int id;
 	private String title;
 	private String content;
-	private int readCount; //조회수
-	private Timestamp createDate; //insert된 시간
+	private int readCount; // 조회수
+	private Timestamp createDate; // 인서트 된 시간
 	
 	private int userId;
-	
-	
 
 	public Post(int id, String title, String content, int readCount, Timestamp createDate, int userId) {
 		this.id = id;
@@ -23,13 +20,12 @@ public class Post {
 		this.userId = userId;
 	}
 	
-	public Post(String title, String content, int userId) {
+	public Post(String title, String content, int readCount, int userId) {
 		this.title = title;
 		this.content = content;
+		this.readCount = readCount;
 		this.userId = userId;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -77,7 +73,7 @@ public class Post {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
-	} 
+	}
 	
 	
 }

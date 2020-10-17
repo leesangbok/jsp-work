@@ -1,4 +1,4 @@
-package com.cos.blog.config.action;
+package com.cos.blog.action;
 
 import java.io.IOException;
 
